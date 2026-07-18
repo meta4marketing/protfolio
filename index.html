@@ -1,0 +1,3098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meta4Marketing | Professional Website Design Company</title>
+
+    <meta name="description"
+        content="Professional Website Design Company in India. Business Website, Landing Page, Website Redesign and SEO Friendly Websites.">
+
+    <meta name="keywords"
+        content="website design, web development, business website, responsive website, landing page">
+
+    <meta name="author" content="Meta4Marketing">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+<style>
+/* ==========================================
+   Meta4Marketing Landing Page
+   style.css - Part 1
+========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#07111f;
+    color:#ffffff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+/* ==========================================
+   Progress Bar
+========================================== */
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:linear-gradient(90deg,#2563eb,#38bdf8);
+
+z-index:9999;
+
+}
+
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-item{
+
+background:#0d1728;
+
+margin-bottom:15px;
+
+border-radius:12px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.faq-question{
+
+padding:20px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.4s;
+
+padding:0 20px;
+
+color:#cbd5e1;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:250px;
+
+padding:20px;
+
+}
+/* ===== Premium Loader ===== */
+
+#loader{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(135deg,#050b16,#07111f,#0d1728);
+
+z-index:999999;
+
+transition:.6s;
+
+}
+
+.loader-content{
+
+text-align:center;
+
+}
+
+.loader-logo{
+
+width:120px;
+
+margin:auto;
+
+margin-bottom:25px;
+
+animation:logoFloat 2s ease-in-out infinite;
+
+filter:drop-shadow(0 0 20px rgba(37,99,235,.6));
+
+}
+
+.loader-content h1{
+
+font-size:40px;
+
+margin-bottom:10px;
+
+font-weight:700;
+
+}
+
+.loader-content p{
+
+color:#9ca3af;
+
+margin-bottom:30px;
+
+font-size:18px;
+
+}
+
+.loader-bar{
+
+width:280px;
+
+height:8px;
+
+background:#1f2937;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin:auto;
+
+}
+
+.loader-progress{
+
+width:0%;
+
+height:100%;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#2563eb,#38bdf8);
+
+animation:loading 2s linear forwards;
+
+}
+
+@keyframes loading{
+
+0%{
+
+width:0%;
+
+}
+
+100%{
+
+width:100%;
+
+}
+
+}
+
+@keyframes logoFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ---------- Variables ---------- */
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#38bdf8;
+    --dark:#07111f;
+    --dark2:#0d1728;
+    --white:#ffffff;
+    --text:#cbd5e1;
+    --success:#22c55e;
+
+    --radius:16px;
+
+    --shadow:
+    0 15px 40px rgba(0,0,0,.30);
+
+}
+
+/* ---------- Common ---------- */
+
+.container{
+
+    width:min(1200px,92%);
+    margin:auto;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+    margin-bottom:15px;
+    font-weight:700;
+
+}
+
+.section-title p{
+
+    color:var(--text);
+    max-width:650px;
+    margin:auto;
+
+}
+
+/* ---------- Header ---------- */
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(7,17,31,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+header .container{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:80px;
+
+}
+
+.logo h2{
+
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+
+}
+
+nav ul{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav ul li a{
+
+    color:#fff;
+    transition:.35s;
+
+}
+
+nav ul li a:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ---------- Buttons ---------- */
+
+.header-btn,
+.btn-primary,
+.btn-secondary,
+.price-btn,
+.cta-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.header-btn,
+.btn-primary,
+.price-btn,
+.cta-btn{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+.btn-secondary{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+}
+
+.header-btn:hover,
+.btn-primary:hover,
+.price-btn:hover,
+.cta-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-secondary:hover{
+
+    background:#fff;
+
+    color:#000;
+
+}
+
+/* ---------- Mobile Menu ---------- */
+
+.menu-btn{
+
+    display:none;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(37,99,235,.35),
+    transparent 40%),
+
+    radial-gradient(circle at bottom left,
+    rgba(56,189,248,.25),
+    transparent 35%),
+
+    var(--dark);
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.tag{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:rgba(37,99,235,.20);
+
+    color:#7dd3fc;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    color:var(--text);
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+
+}
+
+.hero-features{
+
+    display:flex;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#d1fae5;
+
+}
+
+.hero-features i{
+
+    color:var(--success);
+
+}
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:560px;
+
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.45));
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+/* ---------- Animation ---------- */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   STYLE.CSS - PART 2
+   Trust • Services • Why Choose Us
+==========================================*/
+
+/* ---------- Trust Section ---------- */
+
+.trust{
+    background:#0b1528;
+}
+
+.trust h2{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:50px;
+}
+
+.trust-box{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.trust-item{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.trust-item:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#2563eb;
+
+    box-shadow:0 20px 45px rgba(37,99,235,.25);
+
+}
+
+.trust-item i{
+
+    font-size:42px;
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+}
+
+.trust-item h3{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.trust-item p{
+
+    color:#cbd5e1;
+
+}
+
+/* ---------- Services ---------- */
+
+.services{
+
+    background:#07111f;
+
+}
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    background:#0d1728;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+
+    transition:.4s;
+
+}
+
+.service-card:hover::before{
+
+    left:0;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+
+    border-color:#2563eb;
+
+}
+
+.service-card i{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(37,99,235,.15);
+
+    color:#38bdf8;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+.service-card h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+.service-card p{
+
+    color:#cbd5e1;
+
+}
+
+/* ---------- Why Choose Us ---------- */
+
+.why-us{
+
+    background:#0b1528;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.why-box{
+
+    text-align:center;
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    background:#0d1728;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.why-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.25);
+
+    border-color:#38bdf8;
+
+}
+
+.why-box i{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color:#fff;
+
+    font-size:30px;
+
+}
+
+.why-box h3{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+.why-box p{
+
+    color:#cbd5e1;
+
+}
+
+/* ---------- Hover Animation ---------- */
+
+.service-card,
+.trust-item,
+.why-box{
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+}
+
+/* ==========================================
+   STYLE.CSS - PART 3
+   Portfolio • Pricing • CTA
+==========================================*/
+
+/* ========= Portfolio ========= */
+
+.portfolio{
+    background:var(--dark);
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.portfolio-card{
+    background:var(--dark2);
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:all .4s ease;
+    cursor:pointer;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 45px rgba(37,99,235,.20);
+}
+
+.portfolio-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.portfolio-card:hover img{
+    transform:scale(1.08);
+}
+
+.portfolio-content{
+    padding:25px;
+}
+
+.portfolio-content h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.portfolio-content p{
+    color:var(--text);
+}
+
+/* ========= Pricing ========= */
+
+.pricing{
+    background:#0b1528;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.price-card{
+
+    position:relative;
+
+    background:#101d33;
+
+    border-radius:22px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.price-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+
+}
+
+.popular{
+
+    transform:scale(1.05);
+
+    border:2px solid var(--secondary);
+
+}
+
+.popular:hover{
+
+    transform:scale(1.05) translateY(-12px);
+
+}
+
+.popular-tag{
+
+    position:absolute;
+
+    top:-15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    padding:8px 20px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.price-card h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.price-card h1{
+
+    font-size:52px;
+
+    color:var(--secondary);
+
+    margin-bottom:30px;
+
+}
+
+.price-card ul{
+
+    text-align:left;
+
+    margin-bottom:35px;
+
+}
+
+.price-card ul li{
+
+    margin-bottom:15px;
+
+    color:var(--text);
+
+}
+
+.price-card ul li i{
+
+    color:#22c55e;
+
+    margin-right:10px;
+
+}
+
+/* ========= CTA ========= */
+
+.cta{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8);
+
+    text-align:center;
+
+    color:#fff;
+
+}
+
+.cta h2{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}
+
+.cta-btn{
+
+    background:#fff;
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    padding:18px 40px;
+
+}
+
+.cta-btn:hover{
+
+    background:#07111f;
+
+    color:#fff;
+
+}
+
+/* ========= Section Animation Ready ========= */
+
+.portfolio-card,
+.price-card,
+.cta{
+
+    opacity:1;
+
+    transition:
+    transform .4s,
+    box-shadow .4s;
+
+}
+/* ==========================================
+   STYLE.CSS - PART 4
+   Testimonials • Contact • Footer • WhatsApp
+==========================================*/
+
+
+/* ==========================
+   Testimonials
+========================== */
+
+.testimonials{
+
+    background:#07111f;
+
+}
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.testimonial-card{
+
+    background:#0d1728;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--secondary);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.25);
+
+}
+
+.testimonial-card p{
+
+    color:var(--text);
+
+    margin-bottom:25px;
+
+    font-style:italic;
+
+}
+
+.testimonial-card h4{
+
+    font-size:20px;
+
+    margin-bottom:5px;
+
+}
+
+.testimonial-card span{
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+
+
+/* ========================== Contact ========================== */
+
+.contact{
+
+    background:#0b1528;
+
+}
+
+.contact form{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.contact input,
+.contact textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:#101d33;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-family:inherit;
+
+    font-size:16px;
+
+}
+
+.contact input:focus,
+.contact textarea:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 3px rgba(56,189,248,.15);
+
+}
+
+.contact textarea{
+
+    resize:vertical;
+
+}
+
+.contact button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.contact button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    background:#050b16;
+
+    padding:70px 0 30px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-grid h2,
+.footer-grid h3{
+
+    margin-bottom:20px;
+
+}
+
+.footer-grid p{
+
+    color:var(--text);
+
+    margin-bottom:12px;
+
+}
+
+.footer-grid ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-grid ul li a{
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.footer-grid ul li a:hover{
+
+    color:var(--secondary);
+
+}
+
+footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    margin:30px 0;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+}
+
+
+
+/* ==========================
+   Floating WhatsApp
+========================== */
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-size:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    z-index:999;
+
+    transition:.35s;
+
+}
+
+.floating-whatsapp:hover{
+
+    transform:scale(1.12);
+
+}
+
+
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#07111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--primary),var(--secondary));
+
+    border-radius:20px;
+
+}
+
+
+
+/* ==========================
+   Text Selection
+========================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+/* ==========================================
+   BUG FIX + RESPONSIVE BASE
+========================================== */
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+.hero-grid,
+.service-grid,
+.portfolio-grid,
+.pricing-grid,
+.trust-box,
+.why-grid,
+.testimonial-grid,
+.footer-grid{
+
+    width:100%;
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.hero-grid,
+.service-grid,
+.portfolio-grid,
+.pricing-grid,
+.trust-box,
+.why-grid,
+.testimonial-grid,
+.footer-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.section-title h2{
+
+font-size:34px;
+
+}
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header .container{
+
+height:70px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+.hero-grid,
+.service-grid,
+.portfolio-grid,
+.pricing-grid,
+.trust-box,
+.why-grid,
+.testimonial-grid,
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+.price-card{
+
+padding:35px 25px;
+
+}
+
+.cta h2{
+
+font-size:34px;
+
+}
+
+.floating-whatsapp{
+
+width:58px;
+height:58px;
+
+font-size:28px;
+
+right:15px;
+bottom:15px;
+
+}
+
+}
+
+/* ==========================
+   Sticky Header
+========================== */
+
+header.sticky{
+
+    background:#07111f;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+/* ==========================
+   Back To Top
+========================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:100px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+#topBtn.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+.section-title h2{
+
+font-size:26px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.tag{
+
+font-size:12px;
+
+}
+
+}
+/* Mobile Header Fix */
+
+@media (max-width:768px){
+
+header .container{
+
+    height:70px;
+
+    padding:0 15px;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+}
+
+.header-btn{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:block;
+
+    font-size:28px;
+
+    color:#fff;
+
+}
+
+nav{
+
+    display:none;
+
+}
+
+}
+nav.active{
+    display:block;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#07111f;
+    padding:20px;
+}
+
+nav.active ul{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+/* ==========================================
+   Scroll Reveal
+========================================== */
+
+.service-card,
+.portfolio-card,
+.price-card,
+.testimonial-card,
+.why-box,
+.trust-item,
+.contact,
+.cta{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:.8s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+/* Active Menu */
+
+.active-link{
+
+color:#38bdf8 !important;
+
+}
+
+
+
+/* Smooth Transition */
+
+section{
+
+transition:.5s;
+
+}
+</style>
+</head>
+
+<body>
+<div id="loader">
+
+    <div class="loader-content">
+
+        <img src="images/meta4marketing-logo.png"
+             alt="Meta4Marketing Logo"
+             class="loader-logo">
+
+        <h1>Meta4Marketing</h1>
+
+        <p>Building Your Business Online...</p>
+
+        <div class="loader-bar">
+
+            <div class="loader-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ===========================
+HEADER START
+=========================== -->
+
+<header>
+
+    <div class="container">
+
+        <div class="logo">
+            <h2>Meta4Marketing</h2>
+        </div>
+
+        <nav id="navMenu">
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#portfolio">Portfolio</a></li>
+
+                <li><a href="#pricing">Pricing</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <a href="https://wa.me/919382085005" class="header-btn">
+            WhatsApp
+        </a>
+
+        <div class="menu-btn" id="menuBtn">
+
+            <i class="fas fa-bars"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ===========================
+HEADER END
+=========================== -->
+
+
+
+
+
+<!-- ===========================
+HERO SECTION
+=========================== -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div class="hero-left">
+
+<span class="tag">
+
+Professional Website Design
+
+</span>
+
+<h1>
+
+Grow Your Business With A
+Modern & High Converting Website
+
+</h1>
+
+<p>
+
+We build responsive, SEO friendly,
+fast loading websites that help businesses
+generate more leads and increase sales.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#pricing" class="btn-primary">
+
+View Pricing
+
+</a>
+
+<a href="https://wa.me/919382085005"
+class="btn-secondary">
+
+Free Consultation
+
+</a>
+
+</div>
+
+<div class="hero-features">
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+100% Responsive
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+SEO Friendly
+
+</div>
+
+<div>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Fast Loading
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero.svg"
+alt="Website Design">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+HERO END
+=========================== -->
+<!-- ===========================
+TRUST SECTION
+=========================== -->
+
+<section class="trust">
+
+    <div class="container">
+
+        <h2>Trusted By Growing Businesses</h2>
+
+        <div class="trust-box">
+
+            <div class="trust-item">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3><span class="counter" data-target="150">0</span>+</h3>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="trust-item">
+                <i class="fa-solid fa-users"></i>
+                <h3><span class="counter" data-target="500">0</span>+</h3>
+                <p>Happy Clients</p>
+            </div>
+
+            <div class="trust-item">
+                <i class="fa-solid fa-earth-asia"></i>
+                <h3>24×7</h3>
+                <p>Support</p>
+            </div>
+
+            <div class="trust-item">
+                <i class="fa-solid fa-star"></i>
+                <h3>5.0</h3>
+                <p>Average Rating</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================
+SERVICES SECTION
+=========================== -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our Web Design Services</h2>
+
+<p>
+
+Professional websites designed to
+generate more leads and increase sales.
+
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Business Website</h3>
+
+<p>
+
+Modern responsive business website
+for every industry.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-bullseye"></i>
+
+<h3>Landing Page</h3>
+
+<p>
+
+Google Ads and Facebook Ads
+optimized landing pages.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-pen-ruler"></i>
+
+<h3>Website Redesign</h3>
+
+<p>
+
+Convert your old website into a
+modern premium design.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-gauge-high"></i>
+
+<h3>Speed Optimization</h3>
+
+<p>
+
+Improve loading speed and Core
+Web Vitals.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<h3>SEO Optimization</h3>
+
+<p>
+
+On-page SEO setup for better
+Google rankings.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>Website Maintenance</h3>
+
+<p>
+
+Regular updates, backups and
+technical support.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+WHY CHOOSE US
+=========================== -->
+
+<section class="why-us">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Choose Meta4Marketing?</h2>
+
+<p>
+
+We don't just create websites —
+we build websites that help your
+business grow.
+
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-box">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+<h3>Mobile Friendly</h3>
+
+<p>
+
+Looks perfect on every mobile,
+tablet and desktop.
+
+</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Lightning Fast</h3>
+
+<p>
+
+Optimized code for excellent
+loading speed.
+
+</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<h3>Secure Website</h3>
+
+<p>
+
+Latest security standards and
+best practices.
+
+</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-ranking-star"></i>
+
+<h3>SEO Ready</h3>
+
+<p>
+
+Proper website structure for
+better Google visibility.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===========================
+PORTFOLIO SECTION
+=========================== -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Recent Projects</h2>
+
+            <p>
+                A few examples of modern websites designed for different industries.
+            </p>
+
+        </div>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+
+                <img src="images/project1.jpg" alt="Business Website">
+
+                <div class="portfolio-content">
+
+                    <h3>Corporate Business</h3>
+
+                    <p>Responsive Business Website</p>
+
+                </div>
+
+            </div>
+
+            <div class="portfolio-card">
+
+                <img src="images/project2.jpg" alt="School Website">
+
+                <div class="portfolio-content">
+
+                    <h3>Education Website</h3>
+
+                    <p>School & Coaching Institute</p>
+
+                </div>
+
+            </div>
+
+            <div class="portfolio-card">
+
+                <img src="images/project3.jpg" alt="Clinic Website">
+
+                <div class="portfolio-content">
+
+                    <h3>Medical Website</h3>
+
+                    <p>Clinic & Healthcare</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================
+PRICING SECTION
+=========================== -->
+
+<section class="pricing" id="pricing">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Simple Pricing</h2>
+
+<p>
+
+Choose the best plan according to your business needs.
+
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Starter</h3>
+
+<h1>₹7,999</h1>
+
+<ul>
+
+<li><i class="fa-solid fa-check"></i> 5 Pages Website</li>
+
+<li><i class="fa-solid fa-check"></i> Mobile Responsive</li>
+
+<li><i class="fa-solid fa-check"></i> Contact Form</li>
+
+<li><i class="fa-solid fa-check"></i> WhatsApp Button</li>
+
+<li><i class="fa-solid fa-check"></i> Basic SEO</li>
+
+</ul>
+
+<a href="https://wa.me/919382085005" class="price-btn">
+
+Get Started
+
+</a>
+
+</div>
+
+
+
+<div class="price-card popular">
+
+<span class="popular-tag">
+
+Most Popular
+
+</span>
+
+<h3>Professional</h3>
+
+<h1>₹14,999</h1>
+
+<ul>
+
+<li><i class="fa-solid fa-check"></i> 10 Pages Website</li>
+
+<li><i class="fa-solid fa-check"></i> Premium Design</li>
+
+<li><i class="fa-solid fa-check"></i> Blog Setup</li>
+
+<li><i class="fa-solid fa-check"></i> Advanced SEO</li>
+
+<li><i class="fa-solid fa-check"></i> Speed Optimization</li>
+
+<li><i class="fa-solid fa-check"></i> 30 Days Support</li>
+
+</ul>
+
+<a href="https://wa.me/919382085005" class="price-btn">
+
+Choose Plan
+
+</a>
+
+</div>
+
+
+
+<div class="price-card">
+
+<h3>Enterprise</h3>
+
+<h1>Custom</h1>
+
+<ul>
+
+<li><i class="fa-solid fa-check"></i> Unlimited Pages</li>
+
+<li><i class="fa-solid fa-check"></i> Custom Features</li>
+
+<li><i class="fa-solid fa-check"></i> API Integration</li>
+
+<li><i class="fa-solid fa-check"></i> Premium Support</li>
+
+<li><i class="fa-solid fa-check"></i> SEO Setup</li>
+
+</ul>
+
+<a href="https://wa.me/919382085005" class="price-btn">
+
+Contact Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+CALL TO ACTION
+=========================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+
+Ready To Grow Your Business Online?
+
+</h2>
+
+<p>
+
+Let's build a professional website that generates more leads and sales.
+
+</p>
+
+<a href="https://wa.me/919382085005" class="cta-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Chat On WhatsApp
+
+</a>
+
+</div>
+
+</section>
+<!-- ===========================
+TESTIMONIALS
+=========================== -->
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by businesses across different industries.</p>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card">
+                <p>
+                    "Excellent service. Our website looks modern and loads very fast.
+                    We started getting more customer enquiries."
+                </p>
+
+                <h4>Rahul Sharma</h4>
+                <span>Business Owner</span>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "Professional communication and premium design.
+                    Highly recommended."
+                </p>
+
+                <h4>Priya Das</h4>
+                <span>Clinic Owner</span>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "Affordable pricing with excellent quality.
+                    Great experience."
+                </p>
+
+                <h4>Amit Kumar</h4>
+                <span>Manufacturer</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===========================
+CONTACT
+=========================== -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Get Free Consultation</h2>
+
+<p>
+
+Tell us about your project.
+
+</p>
+
+</div>
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<textarea
+placeholder="Tell us about your project..."
+rows="6"></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+FOOTER
+=========================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h2>
+
+Meta4Marketing
+
+</h2>
+
+<p>
+
+Professional Website Design Company helping businesses grow online.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Quick Links
+
+</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#portfolio">Portfolio</a></li>
+
+<li><a href="#pricing">Pricing</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Contact
+
+</h3>
+
+<p>
+
+WhatsApp
+
+</p>
+
+<p>
+
++91 9382085005
+
+</p>
+
+<p>
+
+Available 7 Days
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 Meta4Marketing.
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+
+
+<!-- Floating WhatsApp -->
+
+<a
+href="https://wa.me/919382085005"
+class="floating-whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<script>
+/* ==========================================
+   Meta4Marketing - script.js (Part 1)
+   Mobile Menu + Sticky Header + Back To Top
+========================================== */
+
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+const header = document.querySelector("header");
+
+/* =========================
+   Mobile Menu Toggle
+========================= */
+
+menuBtn.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    navMenu.classList.toggle("active");
+
+    menuBtn.innerHTML =
+        navMenu.classList.contains("active")
+        ? "✕"
+        : "☰";
+
+});
+
+/* =========================
+   Close Menu
+========================= */
+
+document.addEventListener("click", () => {
+
+    navMenu.classList.remove("active");
+
+    menuBtn.innerHTML = "☰";
+
+});
+
+navMenu.addEventListener("click", (e)=>{
+
+    e.stopPropagation();
+
+});
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navMenu.classList.remove("active");
+
+        menuBtn.innerHTML="☰";
+
+    });
+
+});
+
+
+/* =========================
+   Sticky Navbar
+========================= */
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>80){
+
+        header.classList.add("sticky");
+
+    }else{
+
+        header.classList.remove("sticky");
+
+    }
+
+});
+
+
+/* =========================
+   Back To Top Button
+========================= */
+
+const topBtn=document.createElement("button");
+
+topBtn.innerHTML="↑";
+
+topBtn.id="topBtn";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>400){
+
+        topBtn.classList.add("show");
+
+    }else{
+
+        topBtn.classList.remove("show");
+
+    }
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/* =========================
+   Smooth Scroll
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        const target=document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
+/* ==========================================
+   Meta4Marketing - script.js (Part 2)
+   Scroll Reveal + Counter + Active Menu
+==========================================*/
+
+
+/* ==========================
+   Scroll Reveal Animation
+========================== */
+
+const revealElements = document.querySelectorAll(
+".service-card,.portfolio-card,.price-card,.testimonial-card,.why-box,.trust-item,.contact,.cta"
+);
+
+function revealOnScroll(){
+
+    const trigger = window.innerHeight - 120;
+
+    revealElements.forEach((el)=>{
+
+        const top = el.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            el.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealOnScroll);
+
+revealOnScroll();
+
+
+
+/* ==========================
+   Counter Animation
+========================== */
+
+const counters=document.querySelectorAll(".counter");
+
+let counterStarted=false;
+
+function runCounter(){
+
+    if(counterStarted) return;
+
+    const section=document.querySelector(".trust");
+
+    if(!section) return;
+
+    const top=section.getBoundingClientRect().top;
+
+    if(top<window.innerHeight-120){
+
+        counterStarted=true;
+
+        counters.forEach(counter=>{
+
+            const target=+counter.dataset.target;
+
+            let count=0;
+
+            const speed=target/80;
+
+            const update=()=>{
+
+                count+=speed;
+
+                if(count<target){
+
+                    counter.innerText=Math.floor(count);
+
+                    requestAnimationFrame(update);
+
+                }else{
+
+                    counter.innerText=target;
+
+                }
+
+            }
+
+            update();
+
+        });
+
+    }
+
+}
+
+window.addEventListener("scroll",runCounter);
+
+runCounter();
+
+
+
+/* ==========================
+   Active Navigation
+========================== */
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll("#navMenu a");
+
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const top=section.offsetTop-120;
+
+        const height=section.offsetHeight;
+
+        if(pageYOffset>=top){
+
+            current=section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link=>{
+
+        link.classList.remove("active-link");
+
+        if(link.getAttribute("href")==="#"+current){
+
+            link.classList.add("active-link");
+
+        }
+
+    });
+
+});
+/* ==========================================
+   Meta4Marketing - script.js (Part 3)
+   FAQ + Form + Progress Bar + Loader
+==========================================*/
+
+
+/* ==========================
+   FAQ Accordion
+========================== */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(i => {
+
+            if (i !== item) {
+
+                i.classList.remove("active");
+
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* ==========================
+   Contact Form Validation
+========================== */
+
+const form = document.querySelector("form");
+
+if(form){
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const name=form.querySelector('input[type="text"]');
+const email=form.querySelector('input[type="email"]');
+const phone=form.querySelector('input[type="tel"]');
+
+if(name.value.trim()===""){
+
+alert("Please enter your name.");
+
+name.focus();
+
+return;
+
+}
+
+if(email.value.trim()===""){
+
+alert("Please enter your email.");
+
+email.focus();
+
+return;
+
+}
+
+if(phone.value.trim()===""){
+
+alert("Please enter your phone number.");
+
+phone.focus();
+
+return;
+
+}
+
+alert("Thank you! We will contact you soon.");
+
+form.reset();
+
+});
+
+}
+
+
+/* ==========================
+   Scroll Progress Bar
+========================== */
+
+const progress=document.createElement("div");
+
+progress.id="progressBar";
+
+document.body.appendChild(progress);
+
+window.addEventListener("scroll",()=>{
+
+const scrollTop=document.documentElement.scrollTop;
+
+const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+const percent=(scrollTop/height)*100;
+
+progress.style.width=percent+"%";
+
+});
+
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+const loader=document.getElementById("loader");
+
+loader.style.opacity="0";
+
+loader.style.visibility="hidden";
+
+},1800);
+
+});
+</script>
+
+</body>
+</html>
