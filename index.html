@@ -2551,99 +2551,49 @@ CONTACT
 =========================== -->
 
 <section class="contact" id="contact">
-
 <div class="container">
-
 <div class="section-title">
-
-<h2>Get Free Consultation</h2>
-
+<h2>Get Free Consultation</h2>.
 <p>
-
 Tell us about your project.
-
 </p>
-
 </div>
-
 <form onsubmit="sendToWhatsapp(); return false;">
-
 <input type="text" id="name" placeholder="Your Name" required>
 <input type="email" id="email" placeholder="Email Address" required>
 <input type="tel" id="mobile" placeholder="Phone Number" required>
-<textarea id="message" placeholder="Tell us about your project..." rows="6"></textarea>
+<textarea id="notes" placeholder="Tell us about your project..." rows="6"></textarea>
 <button type="submit">
 Send Message
 </button>
 </form>
-<script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let mobile = document.getElementById("mobile").value;
-  let notes = document.getElementById("message").value;
-
-  let message = `Name: ${name}%0AEmail: ${email}%0AMobile: ${mobile}%0ANotes: ${notes}`;
-  let phoneNumber = "919382085005"; // yaha apna WhatsApp number dalna hai
-
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
-}
-</script>
-
 </div>
-
 </section>
-
-
-
 <!-- ===========================
 FOOTER
 =========================== -->
-
 <footer>
-
 <div class="container">
-
 <div class="footer-grid">
-
 <div>
-
 <h2>
-
 Meta4Marketing
-
 </h2>
-
 <p>
-
 Professional Website Design Company helping businesses grow online.
-
 </p>
-
 </div>
-
 <div>
-
 <h3>
-
 Quick Links
-
 </h3>
-
 <ul>
-
 <li><a href="#home">Home</a></li>
-
 <li><a href="#services">Services</a></li>
-
 <li><a href="#portfolio">Portfolio</a></li>
-
 <li><a href="#pricing">Pricing</a></li>
-
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </div>
 
 <div>
@@ -3025,56 +2975,45 @@ faqItems.forEach(item => {
 /* ==========================
    Contact Form Validation
 ========================== */
-
 const form = document.querySelector("form");
 
 if(form){
+  form.addEventListener("submit",(e)=>{
+    e.preventDefault();
 
-form.addEventListener("submit",(e)=>{
+    const name=form.querySelector('input[type="text"]');
+    const email=form.querySelector('input[type="email"]');
+    const phone=form.querySelector('input[type="tel"]');
+    const notes=document.getElementById("notes");
 
-e.preventDefault();
+    if(name.value.trim()===""){
+      alert("Please enter your name.");
+      name.focus();
+      return;
+    }
 
-const name=form.querySelector('input[type="text"]');
-const email=form.querySelector('input[type="email"]');
-const phone=form.querySelector('input[type="tel"]');
+    if(email.value.trim()===""){
+      alert("Please enter your email.");
+      email.focus();
+      return;
+    }
 
-if(name.value.trim()===""){
+    if(phone.value.trim()===""){
+      alert("Please enter your phone number.");
+      phone.focus();
+      return;
+    }
 
-alert("Please enter your name.");
+    // WhatsApp integration
+    let message = `Name: ${name.value}%0AEmail: ${email.value}%0APhone: ${phone.value}%0ANotes: ${notes.value}`;
+    let phoneNumber = "91XXXXXXXXXX"; // apna WhatsApp number yaha dalna hai
 
-name.focus();
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 
-return;
-
+    form.reset();
+  });
 }
 
-if(email.value.trim()===""){
-
-alert("Please enter your email.");
-
-email.focus();
-
-return;
-
-}
-
-if(phone.value.trim()===""){
-
-alert("Please enter your phone number.");
-
-phone.focus();
-
-return;
-
-}
-
-alert("Thank you! We will contact you soon.");
-
-form.reset();
-
-});
-
-}
 
 
 /* ==========================
