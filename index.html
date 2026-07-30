@@ -2566,34 +2566,29 @@ Tell us about your project.
 
 </div>
 
-<form>
+<form onsubmit="sendToWhatsapp(); return false;">
 
-<input
-type="text"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-placeholder="Phone Number"
-required>
-
-<textarea
-placeholder="Tell us about your project..."
-rows="6"></textarea>
-
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
+<input type="tel" id="mobile" placeholder="Phone Number" required>
+<textarea id="message" placeholder="Tell us about your project..." rows="6"></textarea>
 <button type="submit">
-
 Send Message
-
 </button>
-
 </form>
+<script>
+function sendToWhatsApp() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let mobile = document.getElementById("mobile").value;
+  let notes = document.getElementById("message").value;
+
+  let message = `Name: ${name}%0AEmail: ${email}%0AMobile: ${mobile}%0ANotes: ${notes}`;
+  let phoneNumber = "919382085005"; // yaha apna WhatsApp number dalna hai
+
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}
+</script>
 
 </div>
 
