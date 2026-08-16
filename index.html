@@ -2460,7 +2460,14 @@ Contact Now
 
 </section>
 
-<h1>Offer End 20/08/2026</h1>
+<h1 id="blinkText" style="text-align:center;color:white;">Offer End 20/08/2026</h1>
+     <script>
+    // Inline JavaScript for blinking effect
+    setInterval(function() {
+      const el = document.getElementById("blinkText");
+      el.style.visibility = (el.style.visibility === "hidden" ? "visible" : "hidden");
+    }, 500); // 500ms interval = blink speed
+  </script>
   <div class="row">
 
     <!-- Basic Plan -->
